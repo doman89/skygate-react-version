@@ -41,49 +41,61 @@ class MainForm extends Component {
 
     handleOnClickAdd(event, that){
         event.preventDefault();
-        const tempDatabase = that.state.children ? [...that.state.children] : null;
-        const tempId = Date.now();
-        switch (that.state.inputType) {
-            case 'text':
-                tempDatabase.push({
-                    conditionAnswer: '',
-                    questionText: '',
-                    inputType: 'text',
-                    children: [],
-                    id: tempId});
-                break;
-            case 'value':
-                tempDatabase.push({
-                    conditionAnswer: 0,
-                    questionText: '',
-                    inputType: 'value',
-                    children: [],
-                    id: tempId});
-                break;
-            case 'radio':
-                tempDatabase.push({
-                    conditionAnswer: true,
-                    questionText: '',
-                    inputType: 'radio',
-                    children: [],
-                    id: tempId});
-                break;
-            default:
-                break;
+        const isNotMainForm = that.__proto__.constructor !== MainForm;
+        if(that.state.questionText && (isNotMainForm ? that.state.conditionValue : true)) {
+            const tempDatabase = that.state.children ? [...that.state.children] : null;
+            const tempId = Date.now();
+            switch (that.state.inputType) {
+                case 'text':
+                    tempDatabase.push({
+                        conditionAnswer: '',
+                        questionText: '',
+                        inputType: 'text',
+                        children: [],
+                        id: tempId
+                    });
+                    break;
+                case 'value':
+                    tempDatabase.push({
+                        conditionAnswer: 0,
+                        questionText: '',
+                        inputType: 'value',
+                        children: [],
+                        id: tempId
+                    });
+                    break;
+                case 'radio':
+                    tempDatabase.push({
+                        conditionAnswer: true,
+                        questionText: '',
+                        inputType: 'radio',
+                        children: [],
+                        id: tempId
+                    });
+                    break;
+                default:
+                    break;
+            }
+            that.setState({
+                children: tempDatabase,
+            })
+        }else{
+            alert('Fields condition and question can not be empty.');
         }
-        that.setState({
-            children: tempDatabase,
-        })
 
     };
 
     handleOnClickDelete(event ,id){
         event.preventDefault();
-        const elements = [...this.state.children];
-        elements.splice(id, 1);
-        this.setState({
-            children: elements,
-        })
+        if(!this.state.children.length) {
+            const elements = [...this.state.children];
+            elements.splice(id, 1);
+            this.setState({
+                children: elements,
+            })
+        }else{
+            alert('You can not changed this field if existing any sub-forms!');
+        }
     }
 
     appendChildren(that){
@@ -190,9 +202,11 @@ class MainForm extends Component {
                     <div className={'app-list__element__form__thirdLine'}>
                         <button onClick={(event) => this.handleOnClickAdd(event, this)}
                                 className={'app-btn'}
+                                data-content={'Add Sub-Input'}
                         >Add Sub-Input</button>
                         <button onClick={(event) => this.props.handleOnClickDelete(event, id)}
                                 className={'app-btn'}
+                                data-content={'Delete'}
                         >Delete</button>
                     </div>
                 </form>

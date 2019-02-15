@@ -6,7 +6,7 @@ class App extends Component {
     database: [],
   };
 
-  handleOnClick = () => {
+  handleOnClickAdd = () => {
     const tempDatabase = [...this.state.database];
     const tempId = Date.now();
     tempDatabase.push({questionText: '', inputType: 'text', children: [], id: tempId});
@@ -46,9 +46,47 @@ class App extends Component {
             updateDatabase={this.updateDatabase}
             handleOnClickDelete={this.handleOnClickDelete.bind(this)}
         />
-        <button onClick={this.handleOnClick} className={'app-btn app-btn--main'}>Add Input</button>
+        <button onClick={this.handleOnClickAdd}
+                className={'app-btn app-btn--main'}
+                data-content={'Add Input'}
+        >Add Input</button>
       </main>
     );
+  }
+
+  componentWillMount() {
+    this.requestOpenDatabase = window.indexedDB.open("data", 1);
+
+    this.requestOpenDatabase.onerror = () => {
+      console.log("Error loading IndexedDB!");
+    };
+    this.requestOpenDatabase.onsuccess = event => {
+      console.log("IndexedDB is loaded!");
+      this.databaseIDB = this.requestOpenDatabase.result;
+      this.transaction = this.databaseIDB.transaction(['database'], 'readwrite');
+      this.store = this.transaction.objectStore('database');
+      this.request = this.store.get(1);
+      this.request.onsuccess = event => {
+        if(this.request.result !== undefined){
+          console.log(this.request.result);
+          this.setState({
+            database: this.request.result,
+          })
+        }
+      }
+    };
+
+    this.requestOpenDatabase.onupgradeneeded = event => {
+      console.log("Created new IndexedDB database!");
+      this.requestOpenDatabase.result.createObjectStore('database');
+    };
+  }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    this.databaseIDB = this.requestOpenDatabase.result;
+    this.transaction = this.databaseIDB.transaction(['database'], 'readwrite');
+    this.store = this.transaction.objectStore('database');
+    this.store.put(this.state.database, 1);
   }
 }
 

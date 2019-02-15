@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 3px 5px;
   color: white;
   content: attr(data-content);
   position: absolute;
@@ -88,7 +88,7 @@ body {
   border: 1px solid black;
   background-color: rgba(112, 112, 112, 0.2);
   font-weight: 500;
-  padding: 1%;
+  padding: 2%;
   display: flex;
   flex-direction: column;
 }
@@ -103,11 +103,16 @@ body {
 }
 #root .wrapper .app-input {
   border: 1px solid black;
+  padding: 2px 4px;
   margin-left: 5px;
   flex-grow: 1;
   font-size: 1rem;
   width: 100%;
   height: 100%;
+}
+#root .wrapper .app-input:focus {
+  background-color: rgba(51, 88, 255, 0.2);
+  outline: none;
 }
 
 @media (min-width: 768px) {

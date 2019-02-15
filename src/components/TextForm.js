@@ -86,9 +86,11 @@ class TextForm extends Component{
                     <div className={'app-list__element__form__fourthLine'}>
                         <button onClick={(event) => this.props.handleOnClickAdd(event, this)}
                                 className={'app-btn'}
+                                data-content={'Add Sub-Input'}
                         >Add Sub-Input</button>
                         <button onClick={(event) => this.props.handleOnClickDelete(event, this.props.id)}
                                 className={'app-btn'}
+                                data-content={'Delete'}
                         >Delete</button>
                     </div>
                 </form>
