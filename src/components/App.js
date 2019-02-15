@@ -68,7 +68,6 @@ class App extends Component {
       this.request = this.store.get(1);
       this.request.onsuccess = event => {
         if(this.request.result !== undefined){
-          console.log(this.request.result);
           this.setState({
             database: this.request.result,
           })
@@ -86,7 +85,7 @@ class App extends Component {
     this.databaseIDB = this.requestOpenDatabase.result;
     this.transaction = this.databaseIDB.transaction(['database'], 'readwrite');
     this.store = this.transaction.objectStore('database');
-    this.store.put(this.state.database, 1);
+    this.store.put(nextState.database, 1);
   }
 }
 

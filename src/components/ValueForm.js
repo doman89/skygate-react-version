@@ -62,7 +62,12 @@ class ValueForm extends Component{
                             <option value={'equals'}>Equals</option>
                             <option value={'greater'}>Greater than</option>
                         </select>
-                        <input type={'number'} id={'conditionValue'} className={'app-input'}/>
+                        <input type={'number'}
+                               id={'conditionValue'}
+                               className={'app-input'}
+                               value={this.state.conditionValue}
+                               onChange={this.handleOnChange}
+                        />
                     </div>
                     <div className={'app-list__element__form__secondLine'}>
                         <label htmlFor={'questionText'}>Question: </label>
