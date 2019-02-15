@@ -1,3 +1,19 @@
+Skygate challenge v2 - written in React.
+
+There are two ways to see this project:
+1. If you will see it in on mobile device go to the site: https://skygate-challenge.herokuapp.com/.
+2. If you will see it on desktop computer and you will see too source code, make this steps:
+  - first run terminal application (so like cmd, cmder and the like),
+  - in terminal, go to directory where you want have folder with project,
+  - write command: git clone https://github.com/doman89/skygate-react-version.git
+  - if is already done, go to folder skygate-react-version (for example command: cd skygate-react-version)
+  - write command: npm install, and wait few minutes,
+  - if is done, write command: npm start 
+  
+Regards,
+Mateusz Domański
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
