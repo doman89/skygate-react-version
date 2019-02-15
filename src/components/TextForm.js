@@ -80,6 +80,7 @@ class TextForm extends Component{
             </>
         )
     }
+
     componentWillUpdate(nextProps, nextState, nextContext) {
         if(this.state !== nextState) {
             this.props.updateParentState(nextState, this.props.id);

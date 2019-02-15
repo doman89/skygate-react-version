@@ -111,12 +111,16 @@ class MainForm extends Component {
                         return (
                             <li key={child.id}>
                                 <ValueForm keyId={child.id}
-                                          condition={child.condition}
-                                          conditionValue={child.conditionValue}
-                                          questionText={child.questionText}
-                                          inputType={child.inputType}
-                                          children={child.children}
-                                          id={index}
+                                           condition={child.condition}
+                                           conditionValue={child.conditionValue}
+                                           questionText={child.questionText}
+                                           inputType={child.inputType}
+                                           children={child.children}
+                                           id={index}
+                                           updateParentState={that.updateParentState.bind(that)}
+                                           appendChildren={this.appendChildren}
+                                           handleOnClickAdd={this.handleOnClickAdd}
+                                           handleOnClickDelete={that.handleOnClickDelete.bind(that)}
                                 />
                             </li>
                         );
@@ -124,12 +128,16 @@ class MainForm extends Component {
                         return (
                             <li key={child.id}>
                                 <RadioForm keyId={child.id}
-                                          condition={child.condition}
-                                          conditionValue={child.conditionValue}
-                                          questionText={child.questionText}
-                                          inputType={child.inputType}
-                                          children={child.children}
-                                          id={index}
+                                           condition={child.condition}
+                                           conditionValue={child.conditionValue}
+                                           questionText={child.questionText}
+                                           inputType={child.inputType}
+                                           children={child.children}
+                                           id={index}
+                                           updateParentState={that.updateParentState.bind(that)}
+                                           appendChildren={this.appendChildren}
+                                           handleOnClickAdd={this.handleOnClickAdd}
+                                           handleOnClickDelete={that.handleOnClickDelete.bind(that)}
                                 />
                             </li>
                         );

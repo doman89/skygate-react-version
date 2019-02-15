@@ -22,7 +22,7 @@ const FormsList = props => {
 
     return (
         <ul>
-            {formBuilder()};
+            {formBuilder()}
         </ul>
     )
 };
