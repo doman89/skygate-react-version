@@ -1,6 +1,20 @@
 import React, {Component} from 'react';
 
 class ValueForm extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            condition: this.props.condition,
+            conditionValue: this.props.conditionValue,
+            questionText: this.props.questionText,
+            inputType: this.props.inputType,
+            children: this.props.children,
+            id: this.props.keyId,
+
+        };
+    };
+
     render(){
         return (
             <>
@@ -9,7 +23,7 @@ class ValueForm extends Component{
                     <select id={'condition'}>
                         <option value={'equals'}>Equals</option>
                     </select>
-                    <input type={'number'} id={'conditionAnswer'} />
+                    <input type={'number'} id={'conditionValue'} />
                     <label htmlFor={'question'}>Question: </label>
                     <input type={'text'} id={'question'} onChange={this.handleOnChange} value={''}/>
                     <label htmlFor={'type'}>Type: </label>

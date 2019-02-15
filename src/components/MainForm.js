@@ -39,10 +39,11 @@ class MainForm extends Component {
         }
     };
 
-    handleOnClickAdd = () => {
-        const tempDatabase = this.state.children ? [...this.state.children] : null;
+    handleOnClickAdd(event, that){
+        event.preventDefault();
+        const tempDatabase = that.state.children ? [...that.state.children] : null;
         const tempId = Date.now();
-        switch (this.state.inputType) {
+        switch (that.state.inputType) {
             case 'text':
                 tempDatabase.push({
                     conditionAnswer: '',
@@ -67,27 +68,71 @@ class MainForm extends Component {
                     children: [],
                     id: tempId});
                 break;
+            default:
+                break;
         }
-        this.setState({
+        that.setState({
             children: tempDatabase,
         })
 
     };
 
-    appendChildren = () => {
-        if(this.state.children.length) {
-            const elements = this.state.children.map(child => {
-                switch (child.inputType) {
+    handleOnClickDelete(event ,id){
+        event.preventDefault();
+        const elements = [...this.state.children];
+        elements.splice(id, 1);
+        this.setState({
+            children: elements,
+        })
+    }
+
+    appendChildren(that){
+        if(that.props.children.length) {
+            const elements = that.props.children.map((child, index) => {
+                switch (that.state.inputType) {
                     case 'text':
                         return (
                             <li key={child.id}>
-                                <TextForm keyId={child.id}/>
+                                <TextForm keyId={child.id}
+                                          condition={child.condition}
+                                          conditionValue={child.conditionValue}
+                                          questionText={child.questionText}
+                                          inputType={child.inputType}
+                                          children={child.children}
+                                          id={index}
+                                          updateParentState={that.updateParentState.bind(that)}
+                                          appendChildren={this.appendChildren}
+                                          handleOnClickAdd={this.handleOnClickAdd}
+                                          handleOnClickDelete={that.handleOnClickDelete.bind(that)}
+                                />
                             </li>
                         );
                     case 'value':
-                        return <li key={child.id}><ValueForm/></li>;
+                        return (
+                            <li key={child.id}>
+                                <ValueForm keyId={child.id}
+                                          condition={child.condition}
+                                          conditionValue={child.conditionValue}
+                                          questionText={child.questionText}
+                                          inputType={child.inputType}
+                                          children={child.children}
+                                          id={index}
+                                />
+                            </li>
+                        );
                     case 'radio':
-                        return <li key={child.id}><RadioForm/></li>;
+                        return (
+                            <li key={child.id}>
+                                <RadioForm keyId={child.id}
+                                          condition={child.condition}
+                                          conditionValue={child.conditionValue}
+                                          questionText={child.questionText}
+                                          inputType={child.inputType}
+                                          children={child.children}
+                                          id={index}
+                                />
+                            </li>
+                        );
                     default:
                         return null;
                 }
@@ -100,8 +145,15 @@ class MainForm extends Component {
 
     };
 
+    updateParentState(updatedElement, id){
+        const elements  = [...this.props.children];
+        elements.splice(id, 1, updatedElement);
+        this.setState({
+            children: elements,
+        })
+    };
+
     render(){
-        const {children} = this.state;
         const {id} = this.props;
         return (
             <>
@@ -121,11 +173,11 @@ class MainForm extends Component {
                         <option value='value'>Number</option>
                         <option value='radio'>Yes / No</option>
                     </select>
-                    <button onClick={this.handleOnClickAdd}>Add Sub-Input</button>
-                    <button onClick={(event) => this.props.handleDeleteMainForm(event, id, children)}>Delete</button>
+                    <button onClick={(event) => this.handleOnClickAdd(event, this)}>Add Sub-Input</button>
+                    <button onClick={(event) => this.props.handleOnClickDelete(event, id)}>Delete</button>
                 </form>
                 <ul>
-                    {this.appendChildren()}
+                    {this.appendChildren(this)}
                 </ul>
             </>
         );

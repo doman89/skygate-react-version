@@ -1,6 +1,20 @@
 import React, {Component} from 'react';
 
 class RadioForm extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            condition: this.props.condition,
+            conditionValue: this.props.conditionValue,
+            questionText: this.props.questionText,
+            inputType: this.props.inputType,
+            children: this.props.children,
+            id: this.props.keyId,
+
+        };
+    };
+
     render(){
         return (
             <>
@@ -9,7 +23,7 @@ class RadioForm extends Component{
                     <select id={'condition'}>
                         <option value={'equals'}>Equals</option>
                     </select>
-                    <select id={'yes-no'}>
+                    <select id={'conditionValue'}>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>

@@ -15,17 +15,17 @@ class App extends Component {
     })
   };
 
-  deleteElement = (event, id, children) => {
+  handleOnClickDelete(event, id){
     event.preventDefault();
-    if(!children.length) {
+    if(!this.state.database[id].children.length) {
       const elements = [...this.state.database];
       elements.splice(id, 1);
       this.setState({
         database: elements
       })
     }else{
-      alert('You can not changed this field if existing any sub-forms!');
-    }
+        alert('You can not changed this field if existing any sub-forms!');
+      }
   };
 
   updateDatabase = (updatedElement, id) => {
@@ -44,7 +44,7 @@ class App extends Component {
         <FormsList
             database={this.state.database}
             updateDatabase={this.updateDatabase}
-            deleteElement={this.deleteElement}
+            handleOnClickDelete={this.handleOnClickDelete.bind(this)}
         />
         <button onClick={this.handleOnClick}>Add Input</button>
       </main>
