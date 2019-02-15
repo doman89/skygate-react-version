@@ -39,14 +39,14 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <p>Form Builder</p>
+      <main className={'wrapper'}>
+        <h1 className={'app-title'}>Form Builder</h1>
         <FormsList
             database={this.state.database}
             updateDatabase={this.updateDatabase}
             handleOnClickDelete={this.handleOnClickDelete.bind(this)}
         />
-        <button onClick={this.handleOnClick}>Add Input</button>
+        <button onClick={this.handleOnClick} className={'app-btn app-btn--main'}>Add Input</button>
       </main>
     );
   }

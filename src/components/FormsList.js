@@ -6,7 +6,7 @@ const FormsList = props => {
     const formBuilder = () =>{
         const liList = props.database.map((element, index) => {
             return (
-                <li key={element.id}>
+                <li key={element.id} className={'app-list__element app-list__element--main'}>
                     <MainForm
                         questionText={element.questionText}
                         inputType={element.inputType}
@@ -21,7 +21,7 @@ const FormsList = props => {
     };
 
     return (
-        <ul>
+        <ul className={'app-list'}>
             {formBuilder()}
         </ul>
     )

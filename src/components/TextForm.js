@@ -49,32 +49,50 @@ class TextForm extends Component{
     render(){
         return (
             <>
-                <form onSubmit={this.handleOnSubmit}>
-                    <label htmlFor={'condition'}>Condition: </label>
-                    <select id={'condition'}>
-                        <option value={'equals'}>Equals</option>
-                    </select>
-                    <input type={'text'}
-                           id={'conditionValue'}
-                           value={this.state.conditionValue}
-                           onChange={this.handleOnChange}
-                    />
-                    <label htmlFor={'questionText'}>Question: </label>
-                    <input type={'text'}
-                           id={'questionText'}
-                           value={this.state.questionText}
-                           onChange={this.handleOnChange}
-                    />
-                    <label htmlFor={'inputType'}>Type: </label>
-                    <select id={'inputType'} value={this.state.inputType} onChange={this.handleOnChange}>
-                        <option value={'text'}>Text</option>
-                        <option value={'value'}>Number</option>
-                        <option value={'radio'}>Yes / No</option>
-                    </select>
-                    <button onClick={(event) => this.props.handleOnClickAdd(event, this)}>Add Sub-Input</button>
-                    <button onClick={(event) => this.props.handleOnClickDelete(event, this.props.id)}>Delete</button>
+                <form onSubmit={this.handleOnSubmit} className={'app-list__element__form'}>
+                    <div className={'app-list__element__form__firstLine'}>
+                        <label htmlFor={'condition'}>Condition: </label>
+                        <select id={'condition'} className={'app-input'}>
+                            <option value={'equals'}>Equals</option>
+                        </select>
+                        <input type={'text'}
+                               id={'conditionValue'}
+                               value={this.state.conditionValue}
+                               onChange={this.handleOnChange}
+                               className={'app-input'}
+                        />
+                    </div>
+                    <div className={'app-list__element__form__secondLine'}>
+                        <label htmlFor={'questionText'}>Question: </label>
+                        <input type={'text'}
+                               id={'questionText'}
+                               value={this.state.questionText}
+                               onChange={this.handleOnChange}
+                               className={'app-input'}
+                        />
+                    </div>
+                    <div className={'app-list__element__form__thirdLine'}>
+                        <label htmlFor={'inputType'}>Type: </label>
+                        <select id={'inputType'}
+                                value={this.state.inputType}
+                                onChange={this.handleOnChange}
+                                className={'app-input'}
+                        >
+                            <option value={'text'}>Text</option>
+                            <option value={'value'}>Number</option>
+                            <option value={'radio'}>Yes / No</option>
+                        </select>
+                    </div>
+                    <div className={'app-list__element__form__fourthLine'}>
+                        <button onClick={(event) => this.props.handleOnClickAdd(event, this)}
+                                className={'app-btn'}
+                        >Add Sub-Input</button>
+                        <button onClick={(event) => this.props.handleOnClickDelete(event, this.props.id)}
+                                className={'app-btn'}
+                        >Delete</button>
+                    </div>
                 </form>
-                <ul>
+                <ul className={'app-list'}>
                     {this.props.appendChildren(this)}
                 </ul>
             </>

@@ -92,7 +92,7 @@ class MainForm extends Component {
                 switch (that.state.inputType) {
                     case 'text':
                         return (
-                            <li key={child.id}>
+                            <li key={child.id} className={'app-list__element'}>
                                 <TextForm keyId={child.id}
                                           condition={child.condition}
                                           conditionValue={child.conditionValue}
@@ -109,7 +109,7 @@ class MainForm extends Component {
                         );
                     case 'value':
                         return (
-                            <li key={child.id}>
+                            <li key={child.id} className={'app-list__element'}>
                                 <ValueForm keyId={child.id}
                                            condition={child.condition}
                                            conditionValue={child.conditionValue}
@@ -126,7 +126,7 @@ class MainForm extends Component {
                         );
                     case 'radio':
                         return (
-                            <li key={child.id}>
+                            <li key={child.id} className={'app-list__element'}>
                                 <RadioForm keyId={child.id}
                                            condition={child.condition}
                                            conditionValue={child.conditionValue}
@@ -165,26 +165,38 @@ class MainForm extends Component {
         const {id} = this.props;
         return (
             <>
-                <form onSubmit={this.handleOnSubmit}>
-                    <label htmlFor={'question'}>Question: </label>
-                    <input type={'text'}
-                           id={'question'}
-                           onChange={this.handleOnChangeQuestion}
-                           value={this.state.questionText}
-                    />
+                <form onSubmit={this.handleOnSubmit} className={'app-list__element__form'}>
+                    <div className={'app-list__element__form__firstLine'}>
+                        <label htmlFor={'question'}>Question: </label>
+                        <input type={'text'}
+                               id={'question'}
+                               onChange={this.handleOnChangeQuestion}
+                               value={this.state.questionText}
+                               className={'app-input'}
+                        />
+                    </div>
+                    <div className={'app-list__element__form__secondLine'}>
                     <label htmlFor={'type'}>Type: </label>
-                    <select id={'type'}
-                            onChange={this.handleOnChangeType}
-                            value={this.state.inputType}
-                    >
-                        <option value='text'>Text</option>
-                        <option value='value'>Number</option>
-                        <option value='radio'>Yes / No</option>
-                    </select>
-                    <button onClick={(event) => this.handleOnClickAdd(event, this)}>Add Sub-Input</button>
-                    <button onClick={(event) => this.props.handleOnClickDelete(event, id)}>Delete</button>
+                        <select id={'type'}
+                                className={'app-input'}
+                                onChange={this.handleOnChangeType}
+                                value={this.state.inputType}
+                        >
+                            <option value='text'>Text</option>
+                            <option value='value'>Number</option>
+                            <option value='radio'>Yes / No</option>
+                        </select>
+                    </div>
+                    <div className={'app-list__element__form__thirdLine'}>
+                        <button onClick={(event) => this.handleOnClickAdd(event, this)}
+                                className={'app-btn'}
+                        >Add Sub-Input</button>
+                        <button onClick={(event) => this.props.handleOnClickDelete(event, id)}
+                                className={'app-btn'}
+                        >Delete</button>
+                    </div>
                 </form>
-                <ul>
+                <ul className={'app-list'}>
                     {this.appendChildren(this)}
                 </ul>
             </>
