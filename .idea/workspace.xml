@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6b3fdd04-5a8f-4430-bf6d-01697d29f229" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RadioForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RadioForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TextForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ValueForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ValueForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/settings/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/settings/_colors.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="63" column="42" lean-forward="true" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+            <state relative-caret-position="255">
+              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -48,28 +44,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TextForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ValueForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="94" column="53" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MainForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="208" column="53" selection-start-line="208" selection-start-column="53" selection-end-line="208" selection-end-column="53" />
+            <state relative-caret-position="-8">
+              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#updateParentState#0;n#MainForm#0" />
@@ -79,28 +57,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/index.scss">
+        <entry file="file://$PROJECT_DIR$/src/components/ValueForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="586">
+              <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/settings/_colors.scss">
+        <entry file="file://$PROJECT_DIR$/src/components/TextForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+            <state relative-caret-position="289">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/RadioForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="62" />
+            <state relative-caret-position="204">
+              <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -118,6 +96,7 @@
     <findStrings>
       <find>$primaryColorAlpha</find>
       <find>$</find>
+      <find>min-width</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,13 +114,13 @@
         <option value="$PROJECT_DIR$/src/scss/settings/_mixins.scss" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/FormsList.js" />
-        <option value="$PROJECT_DIR$/src/components/RadioForm.js" />
-        <option value="$PROJECT_DIR$/src/components/TextForm.js" />
-        <option value="$PROJECT_DIR$/src/components/ValueForm.js" />
-        <option value="$PROJECT_DIR$/src/components/MainForm.js" />
         <option value="$PROJECT_DIR$/src/scss/settings/_colors.scss" />
         <option value="$PROJECT_DIR$/src/scss/index.scss" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
+        <option value="$PROJECT_DIR$/src/components/MainForm.js" />
+        <option value="$PROJECT_DIR$/src/components/ValueForm.js" />
+        <option value="$PROJECT_DIR$/src/components/TextForm.js" />
+        <option value="$PROJECT_DIR$/src/components/RadioForm.js" />
       </list>
     </option>
   </component>
@@ -261,7 +240,7 @@
       <updated>1550049203056</updated>
       <workItem from="1550049204844" duration="39271000" />
       <workItem from="1550133909020" duration="29741000" />
-      <workItem from="1550224305978" duration="31516000" />
+      <workItem from="1550224305978" duration="37843000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned project from default things like React logo.">
       <created>1550052155557</created>
@@ -298,11 +277,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550245336630</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added saving/loading database from/to indexed db.&#10;Fixed handleOnClickAdd method, now isn't possible add new sub-input if&#10;user have empty condition and question input fields.&#10;Changed some styles.&#10;Added data-content attribute for buttons, for transition.">
+      <created>1550258492054</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1550258492054</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed IndexedDb remove database after reloading website.&#10;Fixed ValueForm component now input of condition filed is controlled and&#10;saved in state.">
+      <created>1550259596039</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1550259596039</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100528000" />
+    <option name="totallyTimeSpent" value="106855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -357,7 +350,9 @@
     <MESSAGE value="First working version, but completely without styles.&#10;&#10;In App Component changed method for deleting main form.&#10;In Main Component changed method handleOnClickAdd for better univerality&#10;, it is now sending in props for children. Added too new method &#10;updateParentState for actualisation all database. Now method&#10;appendChildren is full functionally.&#10;&#10;In TextForm Component now are all needed methods.&#10;&#10;ToDo: styles, TextForm and ValueForm." />
     <MESSAGE value="Added all methods to ValueForm and RadioForm.&#10;In MainForm component upgraded appendChildren method, for well append&#10;components." />
     <MESSAGE value="Added styles in project.&#10;Added for items attribute className in components." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added styles in project.&#10;Added for items attribute className in components." />
+    <MESSAGE value="Added saving/loading database from/to indexed db.&#10;Fixed handleOnClickAdd method, now isn't possible add new sub-input if&#10;user have empty condition and question input fields.&#10;Changed some styles.&#10;Added data-content attribute for buttons, for transition." />
+    <MESSAGE value="Fixed IndexedDb remove database after reloading website.&#10;Fixed ValueForm component now input of condition filed is controlled and&#10;saved in state." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed IndexedDb remove database after reloading website.&#10;Fixed ValueForm component now input of condition filed is controlled and&#10;saved in state." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/App.test.js" />
@@ -419,6 +414,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/settings/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FormsList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -429,45 +448,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TextForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ValueForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="94" column="53" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RadioForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/settings/_colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MainForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="208" column="53" selection-start-line="208" selection-start-column="53" selection-end-line="208" selection-end-column="53" />
+        <state relative-caret-position="-8">
+          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="n#!!block;n#updateParentState#0;n#MainForm#0" />
@@ -475,13 +459,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ValueForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="63" column="42" lean-forward="true" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="586">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TextForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RadioForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
         </state>
       </provider>
     </entry>

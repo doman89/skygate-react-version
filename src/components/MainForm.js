@@ -19,20 +19,10 @@ class MainForm extends Component {
         event.preventDefault();
     };
 
-    handleOnChangeQuestion = event => {
+    handleOnChange = event => {
         if(!this.state.children.length) {
             this.setState({
-                questionText: event.target.value,
-            })
-        }else{
-            alert('You can not changed this field if existing any sub-forms!');
-        }
-    };
-
-    handleOnChangeType = event => {
-        if(!this.state.children.length) {
-            this.setState({
-                inputType: event.target.value,
+                [event.target.dataset.state]: event.target.value,
             })
         }else{
             alert('You can not changed this field if existing any sub-forms!');
@@ -45,37 +35,27 @@ class MainForm extends Component {
         if(that.state.questionText && (isNotMainForm ? that.state.conditionValue : true)) {
             const tempDatabase = that.state.children ? [...that.state.children] : null;
             const tempId = Date.now();
+            const element = {
+                conditionAnswer: '',
+                questionText: '',
+                inputType: '',
+                children: [],
+                id: tempId
+            };
             switch (that.state.inputType) {
                 case 'text':
-                    tempDatabase.push({
-                        conditionAnswer: '',
-                        questionText: '',
-                        inputType: 'text',
-                        children: [],
-                        id: tempId
-                    });
+                    element.inputType = 'text';
                     break;
                 case 'value':
-                    tempDatabase.push({
-                        conditionAnswer: 0,
-                        questionText: '',
-                        inputType: 'value',
-                        children: [],
-                        id: tempId
-                    });
+                    element.inputType = 'value';
                     break;
                 case 'radio':
-                    tempDatabase.push({
-                        conditionAnswer: true,
-                        questionText: '',
-                        inputType: 'radio',
-                        children: [],
-                        id: tempId
-                    });
+                    element.inputType = 'radio';
                     break;
                 default:
                     break;
             }
+            tempDatabase.push(element);
             that.setState({
                 children: tempDatabase,
             })
@@ -85,9 +65,9 @@ class MainForm extends Component {
 
     };
 
-    handleOnClickDelete(event ,id){
+    handleOnClickDelete = (event ,id, that) => {
         event.preventDefault();
-        if(!this.state.children.length) {
+        if(!that.state.children.length) {
             const elements = [...this.state.children];
             elements.splice(id, 1);
             this.setState({
@@ -96,7 +76,7 @@ class MainForm extends Component {
         }else{
             alert('You can not changed this field if existing any sub-forms!');
         }
-    }
+    };
 
     appendChildren(that){
         if(that.props.children.length) {
@@ -179,19 +159,21 @@ class MainForm extends Component {
             <>
                 <form onSubmit={this.handleOnSubmit} className={'app-list__element__form'}>
                     <div className={'app-list__element__form__firstLine'}>
-                        <label htmlFor={'question'}>Question: </label>
+                        <label htmlFor={`questionText${this.state.id}`}>Question: </label>
                         <input type={'text'}
-                               id={'question'}
-                               onChange={this.handleOnChangeQuestion}
+                               data-state={'questionText'}
+                               id={`questionText${this.state.id}`}
+                               onChange={this.handleOnChange}
                                value={this.state.questionText}
                                className={'app-input'}
                         />
                     </div>
                     <div className={'app-list__element__form__secondLine'}>
-                    <label htmlFor={'type'}>Type: </label>
-                        <select id={'type'}
+                    <label htmlFor={`inputType${this.state.id}`}>Type: </label>
+                        <select id={`inputType${this.state.id}`}
+                                data-state={'inputType'}
                                 className={'app-input'}
-                                onChange={this.handleOnChangeType}
+                                onChange={this.handleOnChange}
                                 value={this.state.inputType}
                         >
                             <option value='text'>Text</option>

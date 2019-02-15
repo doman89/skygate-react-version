@@ -22,7 +22,7 @@ class ValueForm extends Component{
         event.stopPropagation();
         if(!this.state.children.length){
             this.setState({
-                [event.target.id]: event.target.value,
+                [event.target.dataset.id]: event.target.value,
             })
         }else{
             alert('You can not changed this field if existing any sub-forms!');
@@ -37,23 +37,27 @@ class ValueForm extends Component{
         })
     };
 
-    handleOnClickDelete(event, id) {
+    handleOnClickDelete = (event ,id, that) => {
         event.preventDefault();
-        const elements = [...this.state.children];
-        elements.splice(id, 1);
-        this.setState({
-            children: elements,
-        })
-    }
-
+        if(!that.state.children.length) {
+            const elements = [...this.state.children];
+            elements.splice(id, 1);
+            this.setState({
+                children: elements,
+            })
+        }else{
+            alert('You can not changed this field if existing any sub-forms!');
+        }
+    };
 
     render(){
         return (
             <>
                 <form onSubmit={this.handleOnSubmit} className={'app-list__element__form'}>
                     <div className={'app-list__element__form__firstLine'}>
-                        <label htmlFor={'condition'}>Condition: </label>
-                        <select id={'condition'}
+                        <label htmlFor={`condition${this.state.id}`}>Condition: </label>
+                        <select id={`condition${this.state.id}`}
+                                data-id={'condition'}
                                 onChange={this.handleOnChange}
                                 value={this.state.condition}
                                 className={'app-input'}
@@ -63,24 +67,27 @@ class ValueForm extends Component{
                             <option value={'greater'}>Greater than</option>
                         </select>
                         <input type={'number'}
-                               id={'conditionValue'}
+                               id={`conditionValue${this.state.id}`}
+                               data-id={'conditionValue'}
                                className={'app-input'}
                                value={this.state.conditionValue}
                                onChange={this.handleOnChange}
                         />
                     </div>
                     <div className={'app-list__element__form__secondLine'}>
-                        <label htmlFor={'questionText'}>Question: </label>
+                        <label htmlFor={`questionText${this.state.id}`}>Question: </label>
                         <input type={'text'}
-                               id={'questionText'}
+                               id={`questionText${this.state.id}`}
+                               data-id={'questionText'}
                                onChange={this.handleOnChange}
                                value={this.state.questionText}
                                className={'app-input'}
                         />
                     </div>
                     <div className={'app-list__element__form__thirdLine'}>
-                        <label htmlFor={'inputType'}>Type: </label>
-                        <select id={'inputType'}
+                        <label htmlFor={`inputType${this.state.id}`}>Type: </label>
+                        <select id={`inputType${this.state.id}`}
+                                data-id={'inputType'}
                                 className={'app-input'}
                                 value={this.state.inputType}
                                 onChange={this.handleOnChange}
@@ -95,7 +102,7 @@ class ValueForm extends Component{
                                 className={'app-btn'}
                                 data-content={'Add Sub-Input'}
                         >Add Sub-Input</button>
-                        <button onClick={(event) => this.props.handleOnClickDelete(event, this.props.id)}
+                        <button onClick={(event) => this.props.handleOnClickDelete(event, this.props.id, this)}
                                 className={'app-btn'}
                                 data-content={'Delete'}
                         >Delete</button>
